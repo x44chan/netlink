@@ -34,43 +34,44 @@
     </div>
   </div>
 <?php } ?>
-  <div id="loader"></div>
-  <div class = "container-fluid animate-bottom" id = "tohide" <?php if(!isset($_GET['print'])){ echo ' style="margin-top:55px; display: none;"'; }else{ echo ' style = "visibility: hidden" '; }?>>
-    <?php
-      include 'ajax/func.php';
-      if(!isset($_GET['action'])){
-          $acc = 'index.php';
-      }else{
-          $acc = $_GET['action'].'.php';
-      }
-      if(!isset($_GET['module'])){
-        include 'modules/main/index.php';
-      }elseif($_GET['module'] == 'logout'){
-          include 'modules/logout.php';
-      }elseif(!file_exists('modules/'.$_GET['module'].'/'.$acc)){
-          include 'config/404.php';
-      }else{
-          include 'modules/'.$_GET['module'].'/'.$acc;
-      }
-      include('config/footer.php');
-      if(isset($_POST['submit'])){
-        $uname = mysqli_real_escape_string($conn, $_POST['uname']);
-        $password =  mysqli_real_escape_string($conn, $_POST['password']);
-        
-        $sql = "SELECT * FROM `user` where uname = '$uname' and pword = '$password'";
-        $result = $conn->query($sql);   
-        if($result->num_rows > 0){
-          while($row = $result->fetch_assoc()){               
-            $_SESSION['acc_id'] = $row['account_id'];
-            $_SESSION['name'] = $row['fname'] . ' ' . $row['mname'] . ', ' . $row['lname'];
-            $_SESSION['username'] = $row['uname'];
-            //$_SESSION['level']=$row['level'];
-            echo '<script type="text/javascript">alert("Login Successful"); setTimeout(function() {window.location.href = "/netlink"},1000);; </script>'; 
-          }       
+    <div id="loader"></div>
+    <div style="width: 100%; height: auto;" id = "chan"></div>
+    <div class = "container-fluid animate-bottom" id = "tohide" style = "display: none;";>
+      <?php
+        include 'ajax/func.php';
+        if(!isset($_GET['action'])){
+            $acc = 'index.php';
         }else{
-            echo '<script type="text/javascript">alert("Incorrect Login"); setTimeout(function() {window.location.href = "/netlink"},1000);; </script>'; 
-          }
-        $conn->close();
-      }
-    
-    ?>
+            $acc = $_GET['action'].'.php';
+        }
+        if(!isset($_GET['module'])){
+          include 'modules/main/index.php';
+        }elseif($_GET['module'] == 'logout'){
+            include 'modules/logout.php';
+        }elseif(!file_exists('modules/'.$_GET['module'].'/'.$acc)){
+            include 'config/404.php';
+        }else{
+            include 'modules/'.$_GET['module'].'/'.$acc;
+        }
+        include('config/footer.php');
+        if(isset($_POST['submit'])){
+          $uname = mysqli_real_escape_string($conn, $_POST['uname']);
+          $password =  mysqli_real_escape_string($conn, $_POST['password']);
+          
+          $sql = "SELECT * FROM `user` where uname = '$uname' and pword = '$password'";
+          $result = $conn->query($sql);   
+          if($result->num_rows > 0){
+            while($row = $result->fetch_assoc()){               
+              $_SESSION['acc_id'] = $row['account_id'];
+              $_SESSION['name'] = $row['fname'] . ' ' . $row['mname'] . ', ' . $row['lname'];
+              $_SESSION['username'] = $row['uname'];
+              //$_SESSION['level']=$row['level'];
+              echo '<script type="text/javascript">alert("Login Successful"); setTimeout(function() {window.location.href = "/netlink"},1000);; </script>'; 
+            }       
+          }else{
+              echo '<script type="text/javascript">alert("Incorrect Login"); </script>'; 
+            }
+          $conn->close();
+        }
+      
+      ?>

@@ -1,7 +1,7 @@
 <?php
 	$page = array(
 				"completed" => "Completed Projects",
-				"ongoing" => "Ongoing Projects",
+				"projects" => "Recent Projects",
 				"careers" => "Careers - Join Us",
 				);
 	$title = "Main Page";

@@ -4,7 +4,7 @@ $(document).ready( function () {
       offset: {
           top: 50
       }
-  })
+  });
   $('[data-toggle="tooltip"]').tooltip(); 
   $('input:checkbox').change(function(){
     if($('#checkbox').is(":checked")){          
@@ -74,7 +74,7 @@ $(document).ready(function(){
   $("#b-0").click(function() { NProgress.start(); });
   $("#b-40").click(function() { NProgress.set(0.4); });
   $("#b-inc").click(function() { NProgress.inc(); });
-  setTimeout(function() { NProgress.done(); $("#loader").css('display','none'); $("#tohide").css('display','block'); }, 1300);
+  setTimeout(function() { NProgress.done(); $("#loader").css('display','none'); $("#tohide").css('display','block'); $("#xchan").css('display','block'); }, 1300);
   $("#b-100").click(function() { NProgress.done(); });
 });
 

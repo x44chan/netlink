@@ -5,7 +5,7 @@
 		<title> Netlink <?php if(isset($title)){echo ' - ' . $title; }?> </title>
 		<base href="http://localhost/netlink/"/>
 		<meta charset="utf-8">
-  		<meta name="viewport" content="width=device-width, initial-scale=1">		
+  		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">	
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
 		<link rel="stylesheet" href="css/bootstrap.min.css">
@@ -21,5 +21,6 @@
 		<script type="text/javascript" src="js/highcharts.js"></script>
 		<script type="text/javascript" src="js/exporting.js"></script>		
 		<script type="text/javascript" src="js/nprogress.js"></script>
+
 	</head>
 	<body>
