@@ -4,6 +4,9 @@
 	$res = $conn->query($projects)->fetch_object();
 	if($conn->query($projects)->num_rows > 0){
 ?>
+<script type="text/javascript">
+    document.title = "Project: <?php echo $res->title; ?>"; 
+</script>
 <div class="container">
 	<script type="text/javascript" src="js/slider/jssor.slider-21.1.5.min.js"></script>
     <script>
@@ -52,10 +55,8 @@
             //responsive code begin
             //you can remove responsive code if you don't want the slider scales while window resizing
             function ScaleSlider() {
-                var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
+                var refSize = $('#slider_container').parent().width();
                 if (refSize) {
-                    refSize = Math.min(refSize, 960);
-                    refSize = Math.max(refSize, 300);
                     jssor_1_slider.$ScaleWidth(refSize);
                 }
                 else {
@@ -196,40 +197,42 @@
 		$resphoto = $conn->query($photos);
 		if($resphoto->num_rows > 0){
 	?>
-    <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 960px; height: 480px; overflow: hidden; visibility: hidden; background-color: #24262e;">
-        <div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
-            <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
-            <div style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
-        </div>
-        <div data-u="slides" id = "xslides" style="cursor: default; position: relative; top: 0px; left: 240px; width: 720px; height: 480px; overflow: hidden;">
-            <?php
-					while ($photo = $resphoto->fetch_object()) {
-					
-			?>
-	            <div data-p="150.00" style="display: none;">
-	                <img data-u="image" src="<?php echo $photo->location;?>" />
-	                <img data-u="thumb" src="<?php echo $photo->location;?>" />
-	            </div>
-	            <div data-p="150.00" style="display: none;">
-	                <img data-u="image" src="<?php echo $photo->location;?>" />
-	                <img data-u="thumb" src="<?php echo $photo->location;?>" />
-	            </div>
-            <?php
-            		}
-            ?>
-        </div>
-        <div data-u="thumbnavigator" class="jssort01-99-66" style="position:absolute;left:0px;top:0px;width:240px;height:480px;" data-autocenter="2">
-            <div data-u="slides" style="cursor: default;">
-                <div data-u="prototype" class="p">
-                    <div class="w">
-                        <div data-u="thumbnailtemplate" class="t"></div>
+    <div id = "slider_container">
+        <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 960px; height: 480px; overflow: hidden; visibility: hidden; background-color: #24262e;">
+            <div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
+                <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
+                <div style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
+            </div>
+            <div data-u="slides" id = "xslides" style="cursor: w-resize; position: relative; top: 0px; left: 240px; width: 720px; height: 480px; overflow: hidden;">
+                <?php
+    					while ($photo = $resphoto->fetch_object()) {
+    					
+    			?>
+    	            <div data-p="150.00" style="display: none;">
+    	                <img data-u="image" src="<?php echo $photo->location;?>" />
+    	                <img data-u="thumb" src="<?php echo $photo->location;?>" />
+    	            </div>
+    	            <div data-p="150.00" style="display: none;">
+    	                <img data-u="image" src="<?php echo $photo->location;?>" />
+    	                <img data-u="thumb" src="<?php echo $photo->location;?>" />
+    	            </div>
+                <?php
+                		}
+                ?>
+            </div>
+            <div data-u="thumbnavigator" class="jssort01-99-66" style="position:absolute;left:0px;top:0px;width:240px;height:480px;" data-autocenter="2">
+                <div data-u="slides" style="cursor: default;">
+                    <div data-u="prototype" class="p">
+                        <div class="w">
+                            <div data-u="thumbnailtemplate" class="t"></div>
+                        </div>
+                        <div class="c"></div>
                     </div>
-                    <div class="c"></div>
                 </div>
             </div>
+            <span data-u="arrowleft" class="jssora05l" style="top:158px;left:248px;width:40px;height:40px;" data-autocenter="2"></span>
+            <span data-u="arrowright" class="jssora05r" style="top:158px;right:8px;width:40px;height:40px;" data-autocenter="2"></span>
         </div>
-        <span data-u="arrowleft" class="jssora05l" style="top:158px;left:248px;width:40px;height:40px;" data-autocenter="2"></span>
-        <span data-u="arrowright" class="jssora05r" style="top:158px;right:8px;width:40px;height:40px;" data-autocenter="2"></span>
     </div>
     <div class="col-xs-12">
     	<hr>

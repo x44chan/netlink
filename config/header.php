@@ -3,7 +3,7 @@
 <html lang="en">
 	<head>
 		<title> Netlink <?php if(isset($title)){echo ' - ' . $title; }?> </title>
-		<base href="http://localhost/netlink/"/>
+		<base href="<?php echo "http://$_SERVER[HTTP_HOST]";?>/netlink/"/>
 		<meta charset="utf-8">
   		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">	
 		<!-- Latest compiled and minified CSS -->
@@ -11,6 +11,7 @@
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/css.css">
 		<link rel="stylesheet" href="css/nprogress.css">
+		<link rel="stylesheet" href="css/hovs.css">
 		
 		<!-- jQuery library -->
 		<script src="js/jquery.min.js"></script>

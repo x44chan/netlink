@@ -5,7 +5,7 @@
 		</div>
 	</div>
 	<div style="border: 1px solid #eee; padding: 10px; border-radius: 5px; height: calc(100%);" >
-		<div class="row" align="center">
+		<div class="row">
 			<?php
 				$projects = "SELECT * FROM projects ORDER BY date DESC";
 				$projects = $conn->query($projects);
@@ -13,12 +13,18 @@
 					while ($row = $projects->fetch_object()) {
 			?>
 			<div class="col-xs-12 col-sm-6 col-md-4">
-				<a href = "projects/view/<?php echo $row->projects_id;?>" id = "projects">
-					<img src="<?php echo $row->thumbnail;?>" class = "img-rounded" style="border: 1px solid !important; height: 200px; width: 250px;"><br>
-					<b><?php echo $row->title; ?></b> 
-				</a><br>
-				<?php echo substr($row->caption, 0, 92); ?>....
-				<hr>
+				<div class="ih-item square colored effect3 bottom_to_top" id = "ih" style = "border: 1px solid; border-radius: 5px;">
+	                <a href="projects/view/<?php echo $row->projects_id;?>">
+	                    <div class="img">
+	                        <img src="<?php echo $row->thumbnail;?>" alt="<?php echo $row->title;?>">
+	                    </div>
+	                    <div class="info">
+	                        <h3><?php echo $row->title;?></h3>
+	                        <p><?php echo substr($row->caption, 0, 60);?>....</p>
+	                    </div>
+	                </a>
+	            </div>
+	            <br class="visible-xs">
 			</div>
 			<?php
 					}

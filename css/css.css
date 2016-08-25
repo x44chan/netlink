@@ -229,7 +229,19 @@ html #tble .table{
        -webkit-box-shadow: none;
        box-shadow: none;
     }
-    
+    .jssorb21 div, .jssorb21 div:hover, .jssorb21 .av {
+        position: absolute;
+        /* size of bullet elment */
+        width: 11px !important;
+        height: 11px !important;
+        text-align: center;
+        line-height: 11px;
+        color: white;
+        font-size: 7px;
+        background: url(img/slider/b21.png) no-repeat;
+        overflow: hidden;
+        cursor: pointer;
+    }    
 }
 .logo-nav{display:block;height:55px; width: 115px;}
 /* Sticky footer styles
