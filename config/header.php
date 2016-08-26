@@ -12,6 +12,8 @@
 		<link rel="stylesheet" href="css/css.css">
 		<link rel="stylesheet" href="css/nprogress.css">
 		<link rel="stylesheet" href="css/hovs.css">
+		<link rel="stylesheet" href="css/animate/animations.css" type="text/css">
+
 		
 		<!-- jQuery library -->
 		<script src="js/jquery.min.js"></script>

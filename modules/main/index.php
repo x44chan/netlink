@@ -114,7 +114,7 @@
         <!-- Jssor Slider End -->
     </div>
 </div>
-<div class="container">
+<div class="container ">
     <div class="row">
         <div class="col-xs-12">
             <h4><u><span class="icon-address-book"></span> About Us</u></h4>
@@ -125,9 +125,10 @@
             <hr>
         </div>
     </div>
-    <div class="row">
-        <div class="col-xs-6 col-sm-4 col-md-4">      
-            <h4><span class="icon-stack"></span> Featured Projeccts </h4>
+    <div class="row animatedParent">
+        <div class="col-xs-6 col-sm-4 col-md-4 animated bounceInRight delay-250">      
+            <center class ="visible-xs visible-sm"><h4><span class="icon-stack"></span> Featured Projects </h4></center>
+            <h4 class="visible-md visible-lg"><span class="icon-stack"></span> Featured Projects </h4>
             <div class="row">
                 <div class = "col-xs-12">
                     <?php
@@ -145,8 +146,9 @@
                 </div>
             </div>
         </div>
-        <div class="col-xs-6 col-sm-4 col-md-4">      
-            <h4><span class="icon-wrench"></span> Featured Services </h4>
+        <div class="col-xs-6 col-sm-4 col-md-4 animated bounceIn delay-250">      
+            <center class ="visible-xs visible-sm"><h4><span class="icon-wrench"></span> Featured Services </h4></center>
+            <h4  class="visible-md visible-lg"><span class="icon-wrench"></span> Featured Services </h4>
             <div class="row">
                 <div class = "col-xs-12">
                     <?php
@@ -161,7 +163,7 @@
             </div>
         </div>
         <center class ="visible-xs visible-sm">
-            <div class="col-xs-12 col-sm-4 col-md-4">      
+            <div class="col-xs-12 col-sm-4 col-md-4 animated bounceInLeft delay-250">      
                 <h4><span class="icon-user-tie"></span> Featured Careers </h4>
                 <div class="row">
                     <div class = "col-xs-12">
@@ -170,7 +172,7 @@
                 </div>
             </div>
         </center>
-        <div class="col-xs-12 col-sm-4 col-md-4 visible-md visible-lg">      
+        <div class="col-xs-12 col-sm-4 col-md-4 visible-md visible-lg animated bounceInLeft delay-250">      
             <h4><span class="icon-user-tie"></span> Featured Careers </h4>
             <div class="row">
                 <div class = "col-xs-12">

@@ -1,5 +1,5 @@
         </div>
-		<footer class="footer" id = "xchan" style = "display: none;">
+		<footer class="footer animated bounceIn" id = "xchan" style = "display: none;">
             <div style="width: 100%; background-color: #2C3E50; height: 2px;"></div>
             <div class="container-fluid">                
     			<div class="row">
@@ -19,3 +19,20 @@
    		</footer>	
 	</body>
 </html>
+<script src='css/animate/css3-animate-it.js'></script>
+
+<script>
+$(document).ready(function(){
+    $.doTimeout(2500, function(){
+        $('.repeat.go').removeClass('go');
+
+        return true;
+    });
+    $.doTimeout(2520, function(){
+        $('.repeat').addClass('go');
+        return true;
+    });
+    
+});
+
+</script>
