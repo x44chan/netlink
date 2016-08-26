@@ -15,7 +15,20 @@
         	<ul class="nav navbar-nav navbar-left">
                 <li><a role = "button" href="/netlink"><span class="icon-home3" style = "font-weight: bold;"></span> Home</a></li>
         	    <li><a role = "button" href="projects"><span class="icon-stack"></span> Projects </a></li>
-                <li><a role = "button" href="services"><span class="icon-clipboard"></span> Services </a></li>
+                <li class="dropdown">
+                    <a role = "button" href="services"><span class="icon-clipboard"></span> Services <b class = "caret"></b></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <?php
+                            $sermenu = "SELECT * FROM services order by services_id ASC";
+                            $sermenu = $conn->query($sermenu);
+                            if($sermenu->num_rows > 0){
+                                while ($rowmenu = $sermenu->fetch_object()) {
+                                    echo '<li><a role = "button" href = "services/view/'.$rowmenu->services_id.'"><span class="icon-codepen"></span> '.$rowmenu->header.'</a></li>';
+                                }
+                            }
+                        ?>
+                    </ul>
+                </li>
                 <li><a role = "button" href="careers"><span class="icon-user-tie"></span> Careers </a></li> 
                 <li><a role = "button" href="about"><span class="icon-address-book"></span> About Us </a></li>
             </ul>

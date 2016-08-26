@@ -3,6 +3,7 @@
 				"completed" => "Completed Projects",
 				"projects" => "Recent Projects",
 				"careers" => "Careers - Join Us",
+				"services" => "Services",
 				);
 	$title = "Main Page";
 	foreach($page as $x => $tag) {

@@ -4,19 +4,25 @@
             <h4><u><span class="icon-mail2"></span> Email Us.</u></h4>
             <hr>
             <form action = "" method="post" accept-charset="utf-8">
+                <?php 
+                    if(isset($_SESSION['succemail']) && $_SESSION['succemail'] != ""){
+                        echo '<label>' . $_SESSION['succemail'] . '</label>';
+                        $_SESSION['succemail'] = "";
+                    }
+                ?>
                 <label>Your Name <font color = "red">*</font></label>
-                <input type = "text" class="form-control input-sm" placeholder = "Enter your name" required>
+                <input type = "text" name = "ename" class="form-control input-sm" placeholder = "Enter your name" required>
                 <br>
                 <label>Email <font color = "red">*</font></label>
-                <input type = "text" class="form-control input-sm" placeholder = "Enter your email" required>
+                <input type = "text" name = "email" class="form-control input-sm" placeholder = "Enter your email" required>
                 <br>
                 <label>Subject <font color = "red">*</font></label>
-                <input type = "text" class="form-control input-sm" placeholder = "Enter your email" required>
+                <input type = "text" name = "esub" class="form-control input-sm" placeholder = "Enter your email" required>
                 <br>
                 <label>How can we help? <font color = "red">*</font></label>
-                <textarea class="form-control input-sm" placeholder = "How can we help?" rows="4" cols="50"></textarea>
+                <textarea class="form-control input-sm" name = "econt" placeholder = "How can we help?" rows="4" cols="50"></textarea>
                 <br>
-                <button class="btn btn-primary btn-sm center-block"> Submit </button>
+                <button class="btn btn-primary btn-sm center-block" name = "emailsub"> Submit </button>
             </form>
         </div>
         <div class="col-xs-12 col-md-6 col-sm-6">
@@ -40,3 +46,16 @@
         </div>
     </div>    
 </div>
+<?php
+    if(isset($_POST['emailsub'])){
+            $mail_To = 'chano.rocks@gmail.com';
+            $mail_Subject = $_POST['esub'];
+            $headers = "From: " . $_POST['email'] . "\r\n";
+            $headers .= 'Cc: c.aquino_programmer@yahoo.com' . "\r\n";
+            $mail_Body = $_POST['econt'] . "\n\n\n" . $_POST['ename'];
+             
+            mail($mail_To, $mail_Subject, $mail_Body,$headers);
+            echo '<script>alert("Report Confirmed");window.location.href="contact";</script>';
+        
+    }
+?>

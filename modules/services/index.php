@@ -25,7 +25,7 @@
                     </div>
                     <div class="info">
                         <h3><?php echo $row->header;?></h3>
-                        <p><?php echo substr($row->desc, 0, 90);?>....</p>
+                        <p><?php echo substr($row->descr, 0, 90);?>....</p>
                     </div>
                 </a>
             </div>

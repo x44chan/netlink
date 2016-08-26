@@ -113,32 +113,73 @@
         </div>
         <!-- Jssor Slider End -->
     </div>
+</div>
+<div class="container">
     <div class="row">
-    	<div class="col-xs-12">
-    		<h4><u>Welcome<u></h4>
-    	</div>
-    	<div class="col-xs-12" align="center">
-    		<hr>
-    		Lorem ipsum dolor sit amet, consectetuer adipiscing elit. <br>
-    		Aenean commodo ligula eget dolor. Aenean massa.<br>
-    		Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. <br>
-    		Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. <br>
-    		Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. <br>
-    		In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. <br>
-    		Nullam dictum felis eu pede mollis pretium. Integer tincidunt. <br>
-    		Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. <br>
-    		Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. <br>
-    		Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. <br>
-    		Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. <br>
-    		Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. <br>
-    		Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. <br>
-    		Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus.<br>
-    		Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. <br>
-    		Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
-    	</div>
+        <div class="col-xs-12">
+            <h4><u><span class="icon-address-book"></span> About Us</u></h4>
+            <blockquote style="font-size: 13px;">
+                <p>Your Total I.T Provider We provide high quality and advanced services from planning to implementation of business systems, networks, telephone systems and all I.T related products. We make sure total satisfaction from our customer is met by giving them all the support they need.</p>
+                <footer><a href = "about" style="color:black;text-decoration: none;" data-toggle="tooltip" title = "About Us">Netlink Advance Solutions, Inc.</a></footer>
+            </blockquote>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-sm-4 col-md-4">      
+            <h4><span class="icon-stack"></span> Featured Projeccts </h4>
+            <div class="row">
+                <div class = "col-xs-12">
+                    <?php
+                        $feaserv = "SELECT * FROM projects ORDER BY projects_id DESC";
+                        $feaserv = $conn->query($feaserv);
+                        while ($rowfe = $feaserv->fetch_object()) {
+                            echo    '<center class = "visible-xs visible-sm"><b><a href = "projects/view/'. $rowfe->projects_id . '" style = "color: black; text-decoration: none;" data-toggle="tooltip" title = "View: '. $rowfe->title . '"><p id = "dev"><img style = "padding: 0px 5px 0px 5px; height: 70px; width: 70px; text-align: center;" src = "'.$rowfe->thumbnail.'"/><br class = "hidden-md hidden-lg">' . strtoupper($rowfe->title) . '</p></a></b><hr></center>';
+                            echo    '<b class = "visible-md visible-lg"><a href = "projects/view/'. $rowfe->projects_id . '" style = "color: black; text-decoration: none;" data-toggle="tooltip" title = "View: '. $rowfe->title . '"><p id = "dev"><img style = "padding: 0px 5px 0px 5px; height: 70px; width: 70px; text-align: center;" src = "'.$rowfe->thumbnail.'"/><br class = "hidden-md hidden-lg">' . strtoupper($rowfe->title) . '</p></a><hr></b>';
+                            echo    '<center class = "visible-xs visible-sm"><b><a href = "projects/view/'. $rowfe->projects_id . '" style = "color: black; text-decoration: none;" data-toggle="tooltip" title = "View: '. $rowfe->title . '"><p id = "dev"><img style = "padding: 0px 5px 0px 5px; height: 70px; width: 70px; text-align: center;" src = "'.$rowfe->thumbnail.'"/><br class = "hidden-md hidden-lg">' . strtoupper($rowfe->title) . '</p></a></b><hr></center>';
+                            echo    '<b class = "visible-md visible-lg"><a href = "projects/view/'. $rowfe->projects_id . '" style = "color: black; text-decoration: none;" data-toggle="tooltip" title = "View: '. $rowfe->title . '"><p id = "dev"><img style = "padding: 0px 5px 0px 5px; height: 70px; width: 70px; text-align: center;" src = "'.$rowfe->thumbnail.'"/><br class = "hidden-md hidden-lg">' . strtoupper($rowfe->title) . '</p></a><hr></b>';
+                            echo    '<center class = "visible-xs visible-sm"><b><a href = "projects/view/'. $rowfe->projects_id . '" style = "color: black; text-decoration: none;" data-toggle="tooltip" title = "View: '. $rowfe->title . '"><p id = "dev"><img style = "padding: 0px 5px 0px 5px; height: 70px; width: 70px; text-align: center;" src = "'.$rowfe->thumbnail.'"/><br class = "hidden-md hidden-lg">' . strtoupper($rowfe->title) . '</p></a></b><hr></center>';
+                            echo    '<b class = "visible-md visible-lg"><a href = "projects/view/'. $rowfe->projects_id . '" style = "color: black; text-decoration: none;" data-toggle="tooltip" title = "View: '. $rowfe->title . '"><p id = "dev"><img style = "padding: 0px 5px 0px 5px; height: 70px; width: 70px; text-align: center;" src = "'.$rowfe->thumbnail.'"/><br class = "hidden-md hidden-lg">' . strtoupper($rowfe->title) . '</p></a><hr></b>';
+                        }
+                    ?>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-4">      
+            <h4><span class="icon-wrench"></span> Featured Services </h4>
+            <div class="row">
+                <div class = "col-xs-12">
+                    <?php
+                        $feaserv = "SELECT * FROM services ORDER BY RAND() LIMIT 0,3";
+                        $feaserv = $conn->query($feaserv);
+                        while ($rowfe = $feaserv->fetch_object()) {
+                            echo    '<center class = "visible-xs visible-sm"><b><a href = "projects/view/'. $rowfe->services_id . '" style = "color: black; text-decoration: none;" data-toggle="tooltip" title = "View: '. $rowfe->header . '"><p id = "dev"><img style = "padding: 0px 5px 0px 5px; height: 70px; width: 70px; text-align: center;" src = "img/services/'.$rowfe->img.'"/><br class = "hidden-md hidden-lg">' . strtoupper($rowfe->header) . '</p></a></b><hr></center>';
+                            echo    '<b class = "visible-md visible-lg"><a href = "projects/view/'. $rowfe->services_id . '" style = "color: black; text-decoration: none;" data-toggle="tooltip" title = "View: '. $rowfe->header . '"><p id = "dev"><img style = "padding: 0px 5px 0px 5px; height: 70px; width: 70px; text-align: center;" src = "img/services/'.$rowfe->img.'"/><br class = "hidden-md hidden-lg">' . strtoupper($rowfe->header) . '</p></a><hr></b>';
+                        }
+                    ?>
+                </div>
+            </div>
+        </div>
+        <center class ="visible-xs visible-sm">
+            <div class="col-xs-12 col-sm-4 col-md-4">      
+                <h4><span class="icon-user-tie"></span> Featured Careers </h4>
+                <div class="row">
+                    <div class = "col-xs-12">
+                        To do
+                    </div>
+                </div>
+            </div>
+        </center>
+        <div class="col-xs-12 col-sm-4 col-md-4 visible-md visible-lg">      
+            <h4><span class="icon-user-tie"></span> Featured Careers </h4>
+            <div class="row">
+                <div class = "col-xs-12">
+                    To do
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-
 <!-- jssor slider scripts-->
 <!-- use jssor.slider.debug.js for debug -->
 <script type="text/javascript" src="js/slider/jssor.slider.mini.js"></script>

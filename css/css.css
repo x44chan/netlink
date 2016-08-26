@@ -241,7 +241,12 @@ html #tble .table{
         background: url(img/slider/b21.png) no-repeat;
         overflow: hidden;
         cursor: pointer;
-    }    
+    }
+}
+@media (max-width: 420px) {
+  #xd{
+    width: 100%;
+  }
 }
 .logo-nav{display:block;height:55px; width: 115px;}
 /* Sticky footer styles
