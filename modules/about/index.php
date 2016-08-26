@@ -5,7 +5,7 @@
             <hr>
     	</div>
     	<div class="col-xs-12 col-md-7">
-            <img src="img/logo.png" height="250" width="auto" class="visible-sm center-block"/>
+            <img src="img/logo.png" height="250" width="auto" class="visible-xs visible-sm center-block"/>
             <p>A group of <b>IT Engineers</b> formed a technical team in 1998 covering the area of North and South for the needs of IT support for corportate company. We call it <b>“Partner Computers”</b>, we provide high quality and advanced services from planning to implementation of business system, networks, and telephone systems.</p>
             <p>We make sure total satisfaction from our customer is met by giving them all the support they need. </p>
             <p>The continous growth in the Information Technology world demands a firm and excellent commitment to rationally deliver our customer’s needs. </p> 
@@ -16,7 +16,7 @@
             <p>Finally, reaching above target sales and profit. Type of business must be align to be more competent and compliance and in terms of government requirements. Management decided to change business status from single proprietor to a new registered name <b>.NETLINK ADVANCE SOLUTIONS, Inc.</b> which is now a corporation.</p>
         </div>
         <div class="col-xs-12 col-md-5" align="center">
-            <img src="img/logo.png" height="250" width="auto" class="hidden-sm" /> 
+            <img src="img/logo.png" height="250" width="auto" class="hidden-sm hidden-xs" /> 
             <hr>
         </div>
     </div>
