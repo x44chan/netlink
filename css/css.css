@@ -184,7 +184,7 @@ html #tble .table{
   color: black;
   text-decoration: none;
 }
-@media (max-width: 928px) {
+@media (max-width: 951px) {
     .navbar-header {
         float: none;
     }
