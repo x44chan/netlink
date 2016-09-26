@@ -1,6 +1,6 @@
     <!-- Static navbar -->
     <nav id = "mainNav" class="navbar navbar-custom navbar-fixed-top navbar-custom affix-top">
-      <div class="container-fluid" style="margin: 0px 15px 0px 15px;">
+      <div class="container-fluid" style="padding-left: 10px;padding-right: 10px;">
         <div style = "float: bottom" class="navbar-header">
         	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
         		<span class="sr-only">Toggle navigation</span>
@@ -8,8 +8,8 @@
         		<span class="icon-bar"></span>
         		<span class="icon-bar"></span>
         	</button>
-        	<a class="navbar-brand" href="/netlink"><span class="icon-office"></span> Netlink </a>
-            <!--<a href="/netlink"><img src="img/logo.png" class="logo-nav" alt="Responsive image"> </a>-->
+        	<!--<a class="navbar-brand" href="/netlink"><span class="icon-office"></span> Netlink </a>-->
+            <a href="/netlink"><img src="img/logo.png" class="logo-nav cmn-t-shake" alt="Responsive image"> </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
         	<ul class="nav navbar-nav navbar-left">

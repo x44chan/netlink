@@ -1,10 +1,13 @@
+<link rel="stylesheet" href="css/partner/thumbnail-slider.css" type="text/css">
+<link rel="stylesheet" href="css/partner/thumbs2.css" type="text/css">
+<script src="css/partner/thumbnail-slider.js"></script>
 <div class="container-fluid">
 	<div style="min-height: 50px;">
         <!-- Jssor Slider Begin -->
         <!-- To move inline styles to css file/block, please specify a class name for each element. --> 
         <!-- ================================================== -->
         <div id="slider1_container" style="visibility: hidden; position: relative; margin: 0 auto;
-        top: 0px; left: 0px; width: 1300px; height: 400px; overflow: hidden;">
+        top: 0px; left: 0px; width: 1300px; height: 450px; overflow: hidden;">
             <!-- Loading Screen -->
             <div u="loading" style="position: absolute; top: 0px; left: 0px;">
                 <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block;
@@ -15,7 +18,7 @@
                 </div>
             </div>
             <!-- Slides Container -->
-            <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1300px; height: 400px; overflow: hidden; border 1;">
+            <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1300px; height: 450px; overflow: hidden; border 1;">
                 <div>
                     <img u="image" src2="img/slider/photos/1.jpg" />
                     <!--<div class="carousel-caption">
@@ -114,10 +117,9 @@
         <!-- Jssor Slider End -->
     </div>
 </div>
-<div class="container ">
+<div class="container">
     <div class="row">
         <div class="col-xs-12">
-            <h4><u><span class="icon-address-book"></span> About Us</u></h4>
             <blockquote style="font-size: 13px;">
                 <p>Your Total I.T Provider We provide high quality and advanced services from planning to implementation of business systems, networks, telephone systems and all I.T related products. We make sure total satisfaction from our customer is met by giving them all the support they need.</p>
                 <footer><a href = "about" style="color:black;text-decoration: none;" data-toggle="tooltip" title = "About Us">Netlink Advance Solutions, Inc.</a></footer>
@@ -125,58 +127,118 @@
             <hr>
         </div>
     </div>
-    <div class="row animatedParent">
-        <div class="col-xs-6 col-sm-4 col-md-4 animated bounceInRight delay-250">      
-            <center class ="visible-xs visible-sm"><h4><span class="icon-stack"></span> Featured Projects </h4></center>
-            <h4 class="visible-md visible-lg"><span class="icon-stack"></span> Featured Projects </h4>
+    <div class="row animatedParent animateOnce">
+        <div class="col-xs-6 col-sm-4 col-md-4 animated bounceInRight">      
+            <center><h4><span class="icon-stack"></span> Featured Projects </h4></center>
             <div class="row">
                 <div class = "col-xs-12">
                     <?php
-                        $feaserv = "SELECT * FROM projects ORDER BY projects_id DESC";
-                        $feaserv = $conn->query($feaserv);
-                        while ($rowfe = $feaserv->fetch_object()) {
-                            echo    '<center class = "visible-xs visible-sm"><b><a href = "projects/view/'. $rowfe->projects_id . '" style = "color: black; text-decoration: none;" data-toggle="tooltip" title = "View: '. $rowfe->title . '"><p id = "dev"><img style = "padding: 0px 5px 0px 5px; height: 70px; width: 70px; text-align: center;" src = "'.$rowfe->thumbnail.'"/><br class = "hidden-md hidden-lg">' . strtoupper($rowfe->title) . '</p></a></b><hr></center>';
-                            echo    '<b class = "visible-md visible-lg"><a href = "projects/view/'. $rowfe->projects_id . '" style = "color: black; text-decoration: none;" data-toggle="tooltip" title = "View: '. $rowfe->title . '"><p id = "dev"><img style = "padding: 0px 5px 0px 5px; height: 70px; width: 70px; text-align: center;" src = "'.$rowfe->thumbnail.'"/><br class = "hidden-md hidden-lg">' . strtoupper($rowfe->title) . '</p></a><hr></b>';
-                            echo    '<center class = "visible-xs visible-sm"><b><a href = "projects/view/'. $rowfe->projects_id . '" style = "color: black; text-decoration: none;" data-toggle="tooltip" title = "View: '. $rowfe->title . '"><p id = "dev"><img style = "padding: 0px 5px 0px 5px; height: 70px; width: 70px; text-align: center;" src = "'.$rowfe->thumbnail.'"/><br class = "hidden-md hidden-lg">' . strtoupper($rowfe->title) . '</p></a></b><hr></center>';
-                            echo    '<b class = "visible-md visible-lg"><a href = "projects/view/'. $rowfe->projects_id . '" style = "color: black; text-decoration: none;" data-toggle="tooltip" title = "View: '. $rowfe->title . '"><p id = "dev"><img style = "padding: 0px 5px 0px 5px; height: 70px; width: 70px; text-align: center;" src = "'.$rowfe->thumbnail.'"/><br class = "hidden-md hidden-lg">' . strtoupper($rowfe->title) . '</p></a><hr></b>';
-                            echo    '<center class = "visible-xs visible-sm"><b><a href = "projects/view/'. $rowfe->projects_id . '" style = "color: black; text-decoration: none;" data-toggle="tooltip" title = "View: '. $rowfe->title . '"><p id = "dev"><img style = "padding: 0px 5px 0px 5px; height: 70px; width: 70px; text-align: center;" src = "'.$rowfe->thumbnail.'"/><br class = "hidden-md hidden-lg">' . strtoupper($rowfe->title) . '</p></a></b><hr></center>';
-                            echo    '<b class = "visible-md visible-lg"><a href = "projects/view/'. $rowfe->projects_id . '" style = "color: black; text-decoration: none;" data-toggle="tooltip" title = "View: '. $rowfe->title . '"><p id = "dev"><img style = "padding: 0px 5px 0px 5px; height: 70px; width: 70px; text-align: center;" src = "'.$rowfe->thumbnail.'"/><br class = "hidden-md hidden-lg">' . strtoupper($rowfe->title) . '</p></a><hr></b>';
+                        $projects = "SELECT * FROM projects ORDER BY date DESC LIMIT 0,3";
+                        $projects = $conn->query($projects);
+                        while ($row = $projects->fetch_object()) {
+                    ?>
+                        <center>
+                            <div class="ih-item square colored effect3 bottom_to_top" id = "ih" style = "box-shadow: 0 2px 6px rgba(0,0,0,0.3); border-radius: 5px; max-height: 150px; max-width: 250px;">
+                                <a href="projects/view/<?php echo $row->projects_id;?>">
+                                    <div class="img" style="max-height: 150px; max-width: 250px;">
+                                        <img style="max-height: 150px; width: 250px;" src="<?php echo $row->thumbnail;?>" alt="<?php echo $row->title;?>">
+                                    </div>
+                                    <div class="info">
+                                        <h3><?php echo $row->title;?></h3>
+                                    </div>
+                                </a>
+                            </div>
+                        </center>
+                        <br class="visible-xs">
+                    <?php
                         }
                     ?>
                 </div>
             </div>
         </div>
-        <div class="col-xs-6 col-sm-4 col-md-4 animated bounceIn delay-250">      
-            <center class ="visible-xs visible-sm"><h4><span class="icon-wrench"></span> Featured Services </h4></center>
-            <h4  class="visible-md visible-lg"><span class="icon-wrench"></span> Featured Services </h4>
+        <div class="col-xs-6 col-sm-4 col-md-4 animated bounceInUp">      
+            <center><h4><span class="icon-wrench"></span> Featured Services </h4></center>
             <div class="row">
                 <div class = "col-xs-12">
                     <?php
-                        $feaserv = "SELECT * FROM services ORDER BY RAND() LIMIT 0,3";
-                        $feaserv = $conn->query($feaserv);
-                        while ($rowfe = $feaserv->fetch_object()) {
-                            echo    '<center class = "visible-xs visible-sm"><b><a href = "projects/view/'. $rowfe->services_id . '" style = "color: black; text-decoration: none;" data-toggle="tooltip" title = "View: '. $rowfe->header . '"><p id = "dev"><img style = "padding: 0px 5px 0px 5px; height: 70px; width: 70px; text-align: center;" src = "img/services/'.$rowfe->img.'"/><br class = "hidden-md hidden-lg">' . strtoupper($rowfe->header) . '</p></a></b><hr></center>';
-                            echo    '<b class = "visible-md visible-lg"><a href = "projects/view/'. $rowfe->services_id . '" style = "color: black; text-decoration: none;" data-toggle="tooltip" title = "View: '. $rowfe->header . '"><p id = "dev"><img style = "padding: 0px 5px 0px 5px; height: 70px; width: 70px; text-align: center;" src = "img/services/'.$rowfe->img.'"/><br class = "hidden-md hidden-lg">' . strtoupper($rowfe->header) . '</p></a><hr></b>';
+                        $projects = "SELECT * FROM services ORDER BY RAND() LIMIT 0,3";
+                        $projects = $conn->query($projects);
+                        while ($row = $projects->fetch_object()) {
+                    ?>
+                        <center>
+                            <div class="ih-item square colored effect3 bottom_to_top" id = "ih" style = "box-shadow: 0 2px 6px rgba(0,0,0,0.3); border-radius: 5px !important; max-height: 150px; max-width: 250px;">
+                                <a href="services/view/<?php echo $row->services_id;?>">
+                                    <div class="img" style="max-height: 150px; max-width: 250px;">
+                                        <img style="max-height: 150px; width: 250px;" src="img/services/<?php echo $row->img;?>" alt="<?php echo $row->header;?>">
+                                    </div>
+                                    <div class="info">
+                                        <h3><?php echo $row->header;?></h3>
+                                    </div>
+                                </a>
+                            </div>
+                        </center>
+                        <br class="visible-xs">
+                    <?php
                         }
                     ?>
                 </div>
             </div>
         </div>
-        <center class ="visible-xs visible-sm">
-            <div class="col-xs-12 col-sm-4 col-md-4 animated bounceInLeft delay-250">      
-                <h4><span class="icon-user-tie"></span> Featured Careers </h4>
-                <div class="row">
-                    <div class = "col-xs-12">
-                        To do
-                    </div>
-                </div>
-            </div>
-        </center>
-        <div class="col-xs-12 col-sm-4 col-md-4 visible-md visible-lg animated bounceInLeft delay-250">      
-            <h4><span class="icon-user-tie"></span> Featured Careers </h4>
+        <div class="col-xs-12 col-sm-4 col-md-4 animated bounceInLeft">      
+            <center><h4><span class="icon-user-tie"></span> Open Position/s </h4></center>
             <div class="row">
                 <div class = "col-xs-12">
-                    To do
+                    <?php
+                        $projects = "SELECT * FROM careers where career_state = 1 ORDER BY urgent DESC LIMIT 0,3";
+                        $projects = $conn->query($projects);
+                    if($projects->num_rows > 0){
+                        while ($row = $projects->fetch_object()) {
+                    ?>
+                        <center>
+                            <div class="ih-item square colored effect3 bottom_to_top" id = "ih" style = "box-shadow: 0 2px 6px rgba(0,0,0,0.3); border-radius: 5px !important; max-height: 130px; max-width: 230px;">
+                                <a href="careers&id=<?php echo $row->career_id;?>">
+                                    <div class="img" style="max-height: 150px; max-width: 250px;">
+                                        <img style="max-height: 130px; width: 230px;" src="img/ppl.gif" alt="<?php echo $row->career_title;?>">
+                                    </div>
+                                    <div class="info">
+                                        <h3><?php echo $row->career_title;?></h3>
+                                    </div>
+                                </a>
+                            </div>
+                            <label><u><?php echo $row->career_title;?></u></label>
+                        </center>
+                        <br class="visible-xs">                      
+                    <?php
+                        }
+                    }else{
+                        echo '<br><br><br><br><center><u><h4 style = "color:red;"> No Open Position for now</h4></u></center>';
+                    } 
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class = "row animatedParent animateOnce">
+        <div class="col-xs-12 animated bounceInUp delay-250">
+            <hr><br>
+            <center><h4><i>Our Partners</i></h4></center>
+            <br>
+            <div id="thumbnail-slider">
+                <div class="inner">
+                    <ul>
+                    <?php 
+                        $photos = "SELECT * FROM photos where project_id = -1 ORDER BY RAND()";
+                        $photos = $conn->query($photos);
+                        if($photos->num_rows > 0){
+                            while($row = $photos->fetch_object()){
+                            echo 
+                                '<li>
+                                    <a class="thumb" href="img/partners/'.$row->location.'"></a>
+                                </li>';
+                            }
+                        }
+                    ?>
+                    </ul>
                 </div>
             </div>
         </div>

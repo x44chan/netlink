@@ -14,6 +14,38 @@ html  {
 #thead{
   background-color: #eaeaea;
 }
+.cmn-t-shake {
+  padding-right: 10px;
+  /* transition: transform 0.2s; */
+}
+.cmn-t-shake:hover {
+  animation: shake 4s ease-in-out;
+}
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+
+  20% {
+    transform: translateX(-10px);
+  }
+
+  40% {
+    transform: translateX(10px);
+  }
+
+  60% {
+    transform: translateX(-10px);
+  }
+
+  80% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
 body{
   margin: 0px;
   padding: 0px;
@@ -22,10 +54,11 @@ body{
   margin-bottom: 215px;
   font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-weight: 400;
-}
+} 
 #chan{
   padding-top: 50px;
   background: #339966;
+  overflow: hidden !important;
 }
 h1, h2, h3, h4, h5 {
   font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -173,7 +206,7 @@ html #tble .table{
     font-size: 1.5em;
   }
   #chan{
-    padding-top: 100px;
+    padding-top: 110px;
   }
 }
 #projects:hover{
@@ -243,11 +276,17 @@ html #tble .table{
         cursor: pointer;
     }
 }
-@media (max-width: 420px) {
-  #xd{
-    width: 100%;
+
+@media (max-width: 768px){
+  .logo-nav{
+    padding: 5px;
+    margin-left: 10px;
+  }
+  body{
+  margin-bottom: 300px;
   }
 }
+
 .logo-nav{display:block;height:55px; width: 115px;}
 /* Sticky footer styles
 -------------------------------------------------- */
