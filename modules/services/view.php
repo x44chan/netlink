@@ -62,10 +62,32 @@
         <div class="col-xs-12" align="center">
             <hr>
             <h4><span class = "icon-notification"></span> Need Help ? </h4><br>
-            <button class="btn btn-sm btn-success"><span class = "icon-phone"></span> Call Us Now! </button>
+            <button type="button" data-toggle="modal" data-target="#callnow" class="btn btn-sm btn-success"><span class = "icon-phone"></span> Call Us Now! </button>
             <a class="btn btn-sm btn-success" href = "contact"><span class = "icon-mail2"></span> Email Us </a>
         </div>
     </div>
+</div>
+<!-- Modal -->
+<div id="callnow" class="modal fade" role="dialog" style="margin-top: 150px;">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content" style="width: auto;">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"><span class="icon-phone"></span> Call Us.</h4>
+      </div>
+      <div class="modal-body" align="center">
+            <label><span class = "icon-phone-hang-up"></span> Landline </label>
+            <p style="margin-left: 10px;"><i>(049) 502 - 9657 / 502 - 9678</i></p>
+            <br>
+            <label><span class = "icon-printer"></span> Fax </label>
+            <p style="margin-left: 10px;"><i>(049) 502 - 9656</i></p>
+            <br>
+            <label><span class = "icon-mobile"></span> Mobile </label>
+            <p style="margin-left: 10px;"><i>+63 998-5564761 / +63 917-8377077</i></p>
+      </div>
+    </div>
+  </div>
 </div>
 <?php
     }

@@ -27,7 +27,7 @@
 				    </div>-->
                 </div>
                 <div class="carousel-caption">
-                     <img u="image" src2="img/slider/photos/2.jpg" />                  
+                    <img u="image" src2="img/slider/photos/2.jpg" />                  
                 </div>
                 <div>
                     <img u="image" src2="img/slider/photos/3.jpg" />
@@ -120,6 +120,7 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
+            <h4><u><span class="icon-address-book"></span> About Netlink </u></h4>
             <blockquote style="font-size: 13px;">
                 <p>Your Total I.T Provider We provide high quality and advanced services from planning to implementation of business systems, networks, telephone systems and all I.T related products. We make sure total satisfaction from our customer is met by giving them all the support they need.</p>
                 <footer><a href = "about" style="color:black;text-decoration: none;" data-toggle="tooltip" title = "About Us">Netlink Advance Solutions, Inc.</a></footer>
@@ -128,7 +129,7 @@
         </div>
     </div>
     <div class="row animatedParent animateOnce">
-        <div class="col-xs-6 col-sm-4 col-md-4 animated bounceInRight">      
+        <div class="col-xs-6 col-sm-4 col-md-4 animated bounceInRight slow">      
             <center><h4><span class="icon-stack"></span> Featured Projects </h4></center>
             <div class="row">
                 <div class = "col-xs-12">
@@ -156,7 +157,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-xs-6 col-sm-4 col-md-4 animated bounceInUp">      
+        <div class="col-xs-6 col-sm-4 col-md-4 animated bounceInUp slow">      
             <center><h4><span class="icon-wrench"></span> Featured Services </h4></center>
             <div class="row">
                 <div class = "col-xs-12">
@@ -184,7 +185,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-xs-12 col-sm-4 col-md-4 animated bounceInLeft">      
+        <div class="col-xs-12 col-sm-4 col-md-4 animated bounceInLeft slow">      
             <center><h4><span class="icon-user-tie"></span> Open Position/s </h4></center>
             <div class="row">
                 <div class = "col-xs-12">
@@ -219,10 +220,10 @@
         </div>
     </div>
     <div class = "row animatedParent animateOnce">
-        <div class="col-xs-12 animated bounceInUp delay-250">
-            <hr><br>
+        <div class="col-xs-12 animated bounceInUp delay-250 slow">
+            <hr/><br/>
             <center><h4><i>Our Partners</i></h4></center>
-            <br>
+            <br/>
             <div id="thumbnail-slider">
                 <div class="inner">
                     <ul>

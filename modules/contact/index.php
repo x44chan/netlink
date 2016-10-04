@@ -6,7 +6,7 @@
             <form action = "" method="post" accept-charset="utf-8">
                 <?php 
                     if(isset($_SESSION['succemail']) && $_SESSION['succemail'] != ""){
-                        echo '<label>' . $_SESSION['succemail'] . '</label>';
+                        echo '<div align = "center"><font color = "green"><label>' . $_SESSION['succemail'] . '</label></font></div>';
                         $_SESSION['succemail'] = "";
                     }
                 ?>
@@ -42,20 +42,21 @@
         <div class="col-xs-12">
             <hr>
             <h4><u><span class="icon-map"></span> Visit Us.</u></h4>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d483.5066777858943!2d121.16528255092244!3d14.191649397106337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf0a0082c5a09d1ba!2sNetlink+Advance+Solutions+Inc.!5e0!3m2!1sen!2s!4v1393223348138" width="100%" height="360" style="border:0"></iframe>
+            <!--<iframe src="https://www.google.com/maps/d/embed?mid=1oQXUKUcThe3vi-qX0Vz4Q--Jd4Y" width="100%" height="480"></iframe>-->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1933.5765909037793!2d121.36850365792682!3d14.244284997507565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTTCsDE0JzM5LjQiTiAxMjHCsDIyJzEwLjYiRQ!5e0!3m2!1sen!2sph!4v1474948786282" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
         </div>
     </div>    
 </div>
 <?php
     if(isset($_POST['emailsub'])){
-            $mail_To = 'chano.rocks@gmail.com';
-            $mail_Subject = $_POST['esub'];
-            $headers = "From: " . $_POST['email'] . "\r\n";
-            $headers .= 'Cc: c.aquino_programmer@yahoo.com' . "\r\n";
-            $mail_Body = $_POST['econt'] . "\n\n\n" . $_POST['ename'];
-             
-            mail($mail_To, $mail_Subject, $mail_Body,$headers);
-            echo '<script>alert("Report Confirmed");window.location.href="contact";</script>';
-        
+        $mail_To = 'chano.rocks@gmail.com';
+        $mail_Subject = $_POST['esub'];
+        $headers = "From: " . $_POST['email'] . "\r\n";
+        $headers .= 'Cc: c.aquino_programmer@yahoo.com' . "\r\n";
+        $mail_Body = $_POST['econt'] . "\n\n\n" . $_POST['ename'];
+        mail($mail_To, $mail_Subject, $mail_Body,$headers);
+
+        $_SESSION['succemail'] = "Email Sent! Thank you for your email, we will contact you back soon ~";
+        echo '<script>window.location.href="contact";</script>';
     }
 ?>
