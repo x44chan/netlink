@@ -51,9 +51,9 @@
     if(isset($_POST['emailsub'])){
         $mail_To = 'chano.rocks@gmail.com';
         $mail_Subject = $_POST['esub'];
-        $headers = "From: " . $_POST['email'] . "\r\n";
-        $headers .= 'Cc: c.aquino_programmer@yahoo.com' . "\r\n";
-        $mail_Body = $_POST['econt'] . "\n\n\n" . $_POST['ename'];
+        $headers = "From: ".$_POST['ename']." autoemail@netlinkph.net\r\nReply-To: ". $_POST['email'];
+        $headers .= 'Cc:' . $_POST['email'] . "\r\n";
+        $mail_Body = $_POST['econt'];
         mail($mail_To, $mail_Subject, $mail_Body,$headers);
 
         $_SESSION['succemail'] = "Email Sent! Thank you for your email, we will contact you back soon ~";

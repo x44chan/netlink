@@ -25,13 +25,15 @@
 	    	<div id="<?php echo $careers->career_id;?>" class="panel-collapse collapse">
 	    		<div class="panel-body">
 	    			<?php echo $careers->career_desc;?>
+	    			<div align="center">
+	    				<button type="button" onclick="apply(<?php echo $careers->career_id;?>)" class="btn btn-sm btn-success"><span class = "icon-user-tie"></span> Apply Now! </button>
+	    			</div>
 	        	</div>
 	      	</div>
     	</div>
     	<?php } ?>
   	</div>
   	<!-- Add new
-
 	  	<div class="row">
 	  		<div class="col-xs-12">
 	  			<form action="" method="post">
@@ -42,22 +44,20 @@
 	  		</div>
 	  	</div>
 	-->
+	<div class="modal fade" id="apply" role="dialog"></div>
 </div>
 <?php
 	if(isset($_POST['submitx'])){
 		$careers = $conn->prepare("INSERT INTO careers (career_title, career_desc) VALUES (?, ?)");
 		$careers->bind_param("ss", $_POST['career_title'], $_POST['career_desc']);
 		$careers->execute();
-		/*  	
-		
-	  	*/
 	}
 ?>
 <?php if(isset($_GET['id']) && $_GET['id'] != "") { ?>
 <script>
 	$(document).ready( function () {
 	    $("#<?php echo $_GET['id']?>").collapse();
-	    $timeout(function(){ $("#<?php echo $_GET['id']?>").scrollTop($("#<?php echo $_GET['id']?>")[0].scrollHeight);}, 10);
+	    //$timeout(function(){ $("#<?php echo $_GET['id']?>").scrollTop($("#<?php echo $_GET['id']?>")[0].scrollHeight);}, 10);
 	});
 </script>
 <?php } ?>
@@ -89,3 +89,42 @@
 	 });
 	</script>
 -->
+<?php
+    if(isset($_POST['submitapp']) && !empty($_POST['name']) && !empty($_POST['email']) && !empty($_FILES['file'])){
+    	$to = 'chano.rocks@gmail.com';
+    	$subject = "Application for: " . $_POST['appost'];
+
+    	$message = strip_tags($_POST['message']);
+    	$attachment = chunk_split(base64_encode(file_get_contents($_FILES['file']['tmp_name'])));
+    	$filename = $_FILES['file']['name'];
+
+    	$boundary =md5(date('r', time())); 
+
+    	$headers = "From: ".$_POST['name']." autoemail@netlinkph.net\r\nReply-To: ". $_POST['email'] . "\r\n";
+    	$headers .= 'Cc: ' . $_POST['email'];
+    	$headers .= "\r\nMIME-Version: 1.0\r\nContent-Type: multipart/mixed; boundary=\"_1_$boundary\"";
+
+    	$message="This is a multi-part message in MIME format.
+
+--_1_$boundary
+Content-Type: multipart/alternative; boundary=\"_2_$boundary\"
+
+--_2_$boundary
+Content-Type: text/plain; charset=\"iso-8859-1\"
+Content-Transfer-Encoding: 7bit
+
+$message
+
+--_2_$boundary--
+--_1_$boundary
+Content-Type: application/octet-stream; name=\"$filename\" 
+Content-Transfer-Encoding: base64 
+Content-Disposition: attachment 
+
+$attachment
+--_1_$boundary--";
+
+    	mail($to, $subject, $message, $headers);
+    	echo '<script>alert("Thank you for your email. We will contact you soon ~."); window.location.href = "careers";</script>';
+    }
+?>

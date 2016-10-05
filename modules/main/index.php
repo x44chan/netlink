@@ -7,7 +7,7 @@
         <!-- To move inline styles to css file/block, please specify a class name for each element. --> 
         <!-- ================================================== -->
         <div id="slider1_container" style="visibility: hidden; position: relative; margin: 0 auto;
-        top: 0px; left: 0px; width: 1300px; height: 450px; overflow: hidden;">
+        top: 0px; left: 0px; width: 1300px; height: 450px; overflow: hidden; border-bottom: black 2px solid;">
             <!-- Loading Screen -->
             <div u="loading" style="position: absolute; top: 0px; left: 0px;">
                 <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block;
@@ -21,13 +21,16 @@
             <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1300px; height: 450px; overflow: hidden; border 1;">
                 <div>
                     <img u="image" src2="img/slider/photos/1.jpg" />
-                    <!--<div class="carousel-caption">
-				    	<h5>Chania</h5>
-				    	<p>The atmosphere in Chania has a touch of Florence and Venice.</p>
-				    </div>-->
+                    <div class="carousel-caption">
+				    	<h5>100 Feet Tower</h5>
+				    	<p>We make sure that the connections are surely connected.</p>
+				    </div>
                 </div>
                 <div class="carousel-caption">
-                    <img u="image" src2="img/slider/photos/2.jpg" />                  
+                    <img u="image" src2="img/slider/photos/2.jpg" />   
+                    <div class="carousel-caption">
+                        <h5>Muntinlupa CCTV</h5>
+                    </div>               
                 </div>
                 <div>
                     <img u="image" src2="img/slider/photos/3.jpg" />
@@ -119,7 +122,7 @@
 </div>
 <div class="container">
     <div class="row">
-        <div class="col-xs-12">
+        <div class="col-xs-12" style="margin-top: 10px;">
             <h4><u><span class="icon-address-book"></span> About Netlink </u></h4>
             <blockquote style="font-size: 13px;">
                 <p>Your Total I.T Provider We provide high quality and advanced services from planning to implementation of business systems, networks, telephone systems and all I.T related products. We make sure total satisfaction from our customer is met by giving them all the support they need.</p>
@@ -220,7 +223,7 @@
         </div>
     </div>
     <div class = "row animatedParent animateOnce">
-        <div class="col-xs-12 animated bounceInUp delay-250 slow">
+        <div class="col-xs-12 animated fadeIn delay-250 slower">
             <hr/><br/>
             <center><h4><i>Our Partners</i></h4></center>
             <br/>
@@ -259,7 +262,7 @@
 
             $ArrowKeyNavigation: true,                          //[Optional] Allows keyboard (arrow key) navigation or not, default value is false
             $SlideEasing: $JssorEasing$.$EaseOutQuint,          //[Optional] Specifies easing for right to left animation, default value is $JssorEasing$.$EaseOutQuad
-            $SlideDuration: 800,                               //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
+            $SlideDuration: 1000,                               //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
             $MinDragOffsetToSlide: 20,                          //[Optional] Minimum drag offset to trigger slide , default value is 20
             //$SlideWidth: 600,                                 //[Optional] Width of every slide in pixels, default value is width of 'slides' container
             //$SlideHeight: 300,                                //[Optional] Height of every slide in pixels, default value is height of 'slides' container
