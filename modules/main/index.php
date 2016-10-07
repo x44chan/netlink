@@ -223,7 +223,7 @@
         </div>
     </div>
     <div class = "row animatedParent animateOnce">
-        <div class="col-xs-12 animated fadeIn delay-250 slower">
+        <div class="col-xs-12 animated fadeIn delay-500 slower">
             <hr/><br/>
             <center><h4><i>Our Partners</i></h4></center>
             <br/>

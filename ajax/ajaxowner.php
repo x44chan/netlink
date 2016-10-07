@@ -25,11 +25,11 @@
                 </div>
                 <div class="form-group">
                     <label>Email <font color="red"> * </font> </label>
-                    <input type = "text" name = "email" class="form-control input-sm" placeholder = "Enter your email" required autocomplete = 'off'/>
+                    <input type = "email" name = "email" class="form-control input-sm" placeholder = "Enter your email" required autocomplete = 'off'/>
                 </div>
                 <div class="form-group">
                     <label>Cover Letter <font color="red"> * </font> </label>
-                    <textarea name = "message" class="form-control input-sm" placeholder = "How can we help?" required> </textarea>
+                    <textarea class="form-control input-sm" name = "message" placeholder = "Introduce yourself!" rows="4" cols="50" required></textarea>
                 </div>
                 <div class="form-group">
                     <label>Attach your resume <font color="red"> * </font> (doc, docx and pdf only)</label>

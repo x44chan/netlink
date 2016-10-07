@@ -6,7 +6,12 @@
             <form action = "" method="post" accept-charset="utf-8">
                 <?php 
                     if(isset($_SESSION['succemail']) && $_SESSION['succemail'] != ""){
-                        echo '<div align = "center"><font color = "green"><label>' . $_SESSION['succemail'] . '</label></font></div>';
+                        if((stristr($_SESSION['succemail'], 'all fields.') !== false)){
+                            $color = "red";
+                        }else{
+                            $color = "green";
+                        }
+                        echo '<div align = "center"><font color = "'.$color.'"><label>' . $_SESSION['succemail'] . '</label></font></div>';
                         $_SESSION['succemail'] = "";
                     }
                 ?>
@@ -14,13 +19,13 @@
                 <input type = "text" name = "ename" class="form-control input-sm" placeholder = "Enter your name" required>
                 <br>
                 <label>Email <font color = "red">*</font></label>
-                <input type = "text" name = "email" class="form-control input-sm" placeholder = "Enter your email" required>
+                <input type = "email" name = "email" class="form-control input-sm" placeholder = "Enter your email" required>
                 <br>
                 <label>Subject <font color = "red">*</font></label>
-                <input type = "text" name = "esub" class="form-control input-sm" placeholder = "Enter your email" required>
+                <input type = "text" name = "esub" class="form-control input-sm" placeholder = "Enter subject" required>
                 <br>
                 <label>How can we help? <font color = "red">*</font></label>
-                <textarea class="form-control input-sm" name = "econt" placeholder = "How can we help?" rows="4" cols="50"></textarea>
+                <textarea class="form-control input-sm" name = "econt" placeholder = "How can we help?" rows="4" cols="50" required></textarea>
                 <br>
                 <button class="btn btn-primary btn-sm center-block" name = "emailsub"> Submit </button>
             </form>
@@ -48,7 +53,7 @@
     </div>    
 </div>
 <?php
-    if(isset($_POST['emailsub'])){
+    if(isset($_POST['emailsub']) && $_POST['ename'] != "" && $_POST['email'] != "" && $_POST['esub'] != "" && $_POST['econt'] != ""){
         $mail_To = 'chano.rocks@gmail.com';
         $mail_Subject = $_POST['esub'];
         $headers = "From: ".$_POST['ename']." autoemail@netlinkph.net\r\nReply-To: ". $_POST['email'];
@@ -57,6 +62,10 @@
         mail($mail_To, $mail_Subject, $mail_Body,$headers);
 
         $_SESSION['succemail'] = "Email Sent! Thank you for your email, we will contact you back soon ~";
+        echo '<script>window.location.href="contact";</script>';
+    }
+    if( (isset($_POST['ename']) && empty($_POST['ename'])) || (isset($_POST['email']) && empty($_POST['email'])) || (isset($_POST['esub']) && empty($_POST['esub'])) || (isset($_POST['econt']) && empty($_POST['econt'])) ){
+        $_SESSION['succemail'] = "Pls fill out all fields.";
         echo '<script>window.location.href="contact";</script>';
     }
 ?>

@@ -12,7 +12,7 @@
 				if($projects->num_rows > 0){
 					while ($row = $projects->fetch_object()) {
 			?>
-			<div class="col-xs-12 col-sm-6 col-md-4">
+			<div class="col-xs-6 col-sm-4 col-md-3">
 				<div class="ih-item square colored effect3 bottom_to_top" id = "ih" style = "border: 1px solid; border-radius: 5px;">
 	                <a href="projects/view/<?php echo $row->projects_id;?>">
 	                    <div class="img">

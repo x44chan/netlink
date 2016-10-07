@@ -51,7 +51,8 @@ body{
   padding: 0px;
   /*background-color: #ebebe0;*/
   font-size: 11px;
-  height: 100%;
+  height: 100%;  
+  margin-bottom: 300px;
   font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-weight: 400;
 } 
@@ -192,6 +193,7 @@ html #tble .table{
   }
   body{
     font-size: 13px;
+    margin-bottom: 200px;
   }
   .navbar-custom .navbar-brand {
     font-size: 2em;
@@ -289,10 +291,12 @@ html #tble .table{
 -------------------------------------------------- */
 html {
   position: relative;
-  height: 100%;
+  min-height: 100%;
 }
 .footer {
-  opacity: 1;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 0;
   width: 100%;
   color: white;
   /* Set the fixed height of the footer here */

@@ -98,6 +98,13 @@
     	$attachment = chunk_split(base64_encode(file_get_contents($_FILES['file']['tmp_name'])));
     	$filename = $_FILES['file']['name'];
 
+    	$imageFileType = pathinfo($filename,PATHINFO_EXTENSION);
+    	// Allow certain file formats
+		if(strtolower($imageFileType) != "doc" && strtolower($imageFileType) != "docx" && strtolower($imageFileType) != "pdf" ) {
+		    $uploadOk = 0;
+		}else{
+		    $uploadOk = 1;	
+		}
     	$boundary =md5(date('r', time())); 
 
     	$headers = "From: ".$_POST['name']." autoemail@netlinkph.net\r\nReply-To: ". $_POST['email'] . "\r\n";
@@ -123,8 +130,11 @@ Content-Disposition: attachment
 
 $attachment
 --_1_$boundary--";
-
+	if($uploadOk > 0){
     	mail($to, $subject, $message, $headers);
     	echo '<script>alert("Thank you for your email. We will contact you soon ~."); window.location.href = "careers";</script>';
+    }else{
+    	echo '<script>alert("Sorry DOC, DOCX or PDF file only."); window.location.href = "careers";</script>';
     }
+}
 ?>
