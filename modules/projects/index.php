@@ -19,7 +19,7 @@
 	                        <img src="<?php echo $row->thumbnail;?>" alt="<?php echo $row->title;?>">
 	                    </div>
 	                    <div class="info">
-	                        <h3><?php echo $row->title;?></h3>
+	                        <h3 style="font-size: 14px;"><?php echo $row->title;?></h3>
 	                        <p><?php echo substr($row->caption, 0, 60);?>....</p>
 	                    </div>
 	                </a>

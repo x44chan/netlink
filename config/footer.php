@@ -13,7 +13,7 @@
                     </div>
                     <div class = "col-xs-12 col-md-5" style="margin-top: 5px;">
                         <p style="font-size: 16px;"><b>ABOUT <font color = "white">US</font></b></p>
-                        <i><p>A group of IT Engineers formed a technical team in 1998 covering the area of North and South for the needs of IT support for corportate company. We call it <b>“Partner Computers”</b>, we provide high quality and advanced services from planning to implementation of business system, networks, and telephone systems. <a href = "about" style="color: #e6e6e6; text-decoration: none; color: #339966;"><b> see more...... </b></a></p></i>
+                        <i><p>A group of IT Engineers formed a technical team in 1998 covering the area of North and South for the needs of IT support for corportate company. We call it <b>“Partner Computers”</b>, we provide high quality and advanced services from planning to implementation of business system, networks, and telephone systems. <a href = "about" style="text-decoration: none; color: #339966;"><b> see more...... </b></a></p></i>
                     </div>
     			</div>
             </div>

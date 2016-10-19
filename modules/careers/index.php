@@ -18,7 +18,7 @@
 			$view_careers = $conn->query($view_careers);
 			while ($careers = $view_careers->fetch_object()) {
 		?>
-    	<div class="panel panel-default">
+    	<div class="panel panel-custom">
     		<div class="panel-heading">
         		<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#<?php echo $careers->career_id;?>"><?php echo $careers->career_title;?> <b class = "caret"></b></a></h4>
     		</div>
